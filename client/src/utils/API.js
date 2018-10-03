@@ -1,7 +1,7 @@
 import axios from "axios";
 // const key = "491ffd3e66c94f8ba2eaa87512012d3d";
 const key = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
-let url = " http://api.nytimes.com/svc/search/v2/articlesearch.json?"
+let url = " https://api.nytimes.com/svc/search/v2/articlesearch.json?"
 export default {
   scrapeArticles: function(title, number, yearStart=null, yearEnd=null) {
     if(yearStart && yearEnd) {
