@@ -36,7 +36,6 @@ class Home extends Component {
     this.setState({
       [name]: value
     })
-    console.log(this.state.title);
   }
 
   getSearch = (event) => {
@@ -46,20 +45,17 @@ class Home extends Component {
       this.setState({
         articles: data.data.response.docs
       });
-      console.log(data.data.response.docs);
     });
     
   }
 
   saveArticle(title, date, url) {
-    console.log(title, date, url);
     API.saveArticle({
       title,
       date,
       url
     })
     .then(data => {
-      console.log(data)
       this.loadArticles();
     })
     .catch(err => console.log(err));
@@ -67,7 +63,6 @@ class Home extends Component {
 
   deleteArticle = (id) => {
     API.deleteArticle(id).then(data => {
-      console.log(data)
       this.loadArticles();
     });
   }
